@@ -99,7 +99,7 @@
        //省略代码
        }
 ```
-5. 至此，时间戳功能完成,截图展示如下：
+5. 至此，时间戳功能完成,截图展示：
 ![image](
 https://github.com/Lwx159/MyNotePad/blob/master/img/2%E3%80%81time.png)
 
@@ -255,7 +255,15 @@ public class NoteSearch extends ListActivity  implements SearchView.OnQueryTextL
         android:label="@string/title_notes_search">
     </activity>
 ```
-6. 至此，笔记搜索功能完成。
+6. 至此，笔记搜索功能完成，截图展示：
+
+！[image](https://github.com/Lwx159/MyNotePad/blob/master/img/3%E3%80%81search.png)
+
+![image](https://github.com/Lwx159/MyNotePad/blob/master/img/4%E3%80%81search2.png)
+
+![image](https://github.com/Lwx159/MyNotePad/blob/master/img/5%E3%80%81search3.png)
+
+
 <a name="笔记界面美化"></a>  
  ## 笔记界面美化
  1. 修改**AndroidManifest.xml**的**NotesList**:
