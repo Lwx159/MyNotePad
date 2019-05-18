@@ -641,7 +641,7 @@ public class NoteColor extends Activity {
 ```
 7. 至此，笔记更换背景颜色功能完成
 
-*更换颜色前：
+* 更换颜色前：
 
 ![image](https://github.com/Lwx159/MyNotePad/blob/master/img/1%E3%80%81editor.png)
 
