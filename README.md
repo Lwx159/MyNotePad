@@ -6,7 +6,7 @@
   * [拓展的功能](#拓展的功能)
 * [笔记时间戳](#笔记时间戳)  
 * [笔记按标题搜索](#笔记按标题搜索)
-* [笔记更换背景颜色](#笔记更换背景颜色代码分)
+* [笔记更换背景](#笔记更换背景)
 * [笔记排序](#笔记排序)
 * [导出笔记功能](#导出笔记功能)
 <a name="笔记实现的功能"></a>  
@@ -254,8 +254,8 @@ public class NoteSearch extends ListActivity  implements SearchView.OnQueryTextL
     </activity>
 ```
 6. 至此，笔记搜索功能完成。
-<a name="笔记更换背景颜色"></a>  
-## 笔记更换背景颜色
+<a name="笔记更换背景"></a>  
+## 笔记更换背景
 <a name="笔记排序"></a>  
 ## 笔记排序
 1.在 **list_options_menu.xml** 中添加排序项
