@@ -256,10 +256,15 @@ public class NoteSearch extends ListActivity  implements SearchView.OnQueryTextL
     </activity>
 ```
 6. 至此，笔记搜索功能完成，截图展示：
+* 搜索页面：
 
 ！[image](https://github.com/Lwx159/MyNotePad/blob/master/img/3%E3%80%81search.png)
 
+* 搜索沁园春：
+
 ![image](https://github.com/Lwx159/MyNotePad/blob/master/img/4%E3%80%81search2.png)
+
+* 搜索沁园春结果：
 
 ![image](https://github.com/Lwx159/MyNotePad/blob/master/img/5%E3%80%81search3.png)
 
