@@ -99,7 +99,8 @@
        //省略代码
        }
 ```
-5. 至此，时间戳功能完成。
+5. 至此，时间戳功能完成,截图展示如下：
+![image](https://github.com/AngelSXD/sxd_first_repository/blob/master/images/20160615165142.png)
 
 <a name="笔记按标题搜索"></a>  
 ## 笔记按标题搜索
