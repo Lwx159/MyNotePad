@@ -29,6 +29,28 @@
 * 导出笔记
 <a name="笔记时间戳"></a>  
 ## 笔记时间戳
+1. 修改**layout**中**noteslist_item.xml**布局文件:
+* 在LinearLayout里设置垂直显示布局：
+```
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+```
+* 添加一个显示时间戳的TextView，并设置其字体大小和颜色
+```
+ <TextView
+        android:id="@+id/text1_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:paddingLeft="5dip"
+        android:textColor="@color/colorBlack"/>
+ ```
+2. 在**NotePadProvider.java**中定义了数据库，其中**CREATE_DATE**是创建笔记的时间，**MODIFICATION_DATE**是修改笔记的时间，这就是我们之后要用到的时间数据。
+```
+ @Override
 <a name="笔记按标题搜索"></a>  
 ## 笔记按标题搜索
 <a name="笔记排序"></a>  
