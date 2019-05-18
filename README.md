@@ -640,17 +640,18 @@ public class NoteColor extends Activity {
     }
 ```
 7. 至此，笔记更换背景颜色功能完成
+
 *更换颜色前：
 
 ![image](https://github.com/Lwx159/MyNotePad/blob/master/img/1%E3%80%81editor.png)
 
 * 选择要更换的颜色：
 
-![image](https://github.com/Lwx159/MyNotePad/blob/master/img/6%E3%80%81color3.png)
+![image](https://github.com/Lwx159/MyNotePad/blob/master/img/13%E3%80%81color3.png)
 
 * 更换颜色后：
 
-![image](https://github.com/Lwx159/MyNotePad/blob/master/img/6%E3%80%81color2.png)
+![image](https://github.com/Lwx159/MyNotePad/blob/master/img/7%E3%80%81color2.png)
 
 <a name="笔记排序"></a>  
 ## 笔记排序
