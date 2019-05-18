@@ -69,6 +69,39 @@
             // 修改时间
             NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE, // 2
     };
+4.  把时间戳改为以时间格式存入:
+     改动地方有两处：
+* 第一处为**NotePadProvider.java** ，创建时间
+```
+     public Uri insert(Uri uri, ContentValues initialValues) {
+        //省略部分代码
+         // 将milliseconds转化为一定的时间格式
+        Long now = Long.valueOf(System.currentTimeMillis());
+        Date date = new Date(now);
+        SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
+        String dateTime = format.format(date);
+       //省略部分代码
+       }
+```
+* 第二处：**NoteEditor.java**，修改时间
+```
+ private final void updateNote(String text, String title) {
+
+     //省略代码
+     ...
+        //修改时间
+        Long now = Long.valueOf(System.currentTimeMillis());
+        Date date = new Date(now);
+        SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
+        String dateTime = format.format(date);
+        values.put(NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE, dateTime);
+        ...
+       //省略代码
+       }
+```
+5. 至此，时间戳功能完成。
+
+
 <a name="笔记按标题搜索"></a>  
 ## 笔记按标题搜索
 <a name="笔记排序"></a>  
