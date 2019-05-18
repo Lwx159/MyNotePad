@@ -104,7 +104,16 @@
 
 <a name="笔记按标题搜索"></a>  
 ## 笔记按标题搜索
-1. 新建搜索的布局文件**note_search_list.xml**：
+1. 在**list_options_menu.xml**中添加搜索项:
+```
+    <item
+        android:id="@+id/menu_search"
+        android:title="@string/menu_search"
+        android:icon="@android:drawable/ic_search_category_default"
+        android:showAsAction="always">
+    </item>
+```
+2. 新建搜索的布局文件**note_search_list.xml**：
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -127,16 +136,6 @@
     </ListView>
 
 </LinearLayout>
-```
-
-2. 在**list_options_menu.xml**中添加搜索项:
-```
-    <item
-        android:id="@+id/menu_search"
-        android:title="@string/menu_search"
-        android:icon="@android:drawable/ic_search_category_default"
-        android:showAsAction="always">
-    </item>
 ```
 3. 新建一个名为**NoteSearch**的**activity**:
 ```
