@@ -646,7 +646,7 @@ public class NoteColor extends Activity {
 
 * 选择要更换的颜色：
 
-![image](https://github.com/Lwx159/MyNotePad/blob/master/img/6%E3%80%81color1.png)
+![image](https://github.com/Lwx159/MyNotePad/blob/master/img/6%E3%80%81color3.png)
 
 * 更换颜色后：
 
@@ -751,7 +751,5 @@ https://github.com/Lwx159/MyNotePad/blob/master/img/10%E3%80%81sortByChangeTime.
 
 * 按照颜色排序：
 
-
-![image](
-https://github.com/Lwx159/MyNotePad/blob/master/img/11%E3%80%81sortByColor.png）
+![image](https://github.com/Lwx159/MyNotePad/blob/master/img/11%E3%80%81sortByColor.png)
 
