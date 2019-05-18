@@ -100,8 +100,11 @@
        }
 ```
 5. 至此，时间戳功能完成,截图展示：
+* 时间戳显示：
+
 ![image](
 https://github.com/Lwx159/MyNotePad/blob/master/img/2%E3%80%81time.png)
+
 
 <a name="笔记按标题搜索"></a>  
 ## 笔记按标题搜索
@@ -392,10 +395,12 @@ adapter = new MyCursorAdapter(
     );
 ```
 8. 至此，笔记界面从黑色变成白色，为接下来的背景改变做准备
+
 * 编辑界面：
+
 ![image](https://github.com/Lwx159/MyNotePad/blob/master/img/1%E3%80%81editor.png)
-* 首页面：
-![image](https://github.com/Lwx159/MyNotePad/blob/master/img/2%E3%80%81time.png)
+
+
 <a name="笔记更换背景"></a>  
 ## 笔记更换背景
 1. 在**NoteEditor**中:
