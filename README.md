@@ -6,9 +6,9 @@
   * [拓展的功能](#拓展的功能)
 * [笔记时间戳](#笔记时间戳)  
 * [笔记按标题搜索](#笔记按标题搜索)
+* [笔记界面美化](#笔记界面美化)
 * [笔记更换背景](#笔记更换背景)
 * [笔记排序](#笔记排序)
-* [导出笔记功能](#导出笔记功能)
 <a name="笔记实现的功能"></a>  
 ## 笔记实现的功能
 <a name="原有功能"></a>  
@@ -254,8 +254,8 @@ public class NoteSearch extends ListActivity  implements SearchView.OnQueryTextL
     </activity>
 ```
 6. 至此，笔记搜索功能完成。
-<a name="笔记更换背景"></a>  
- ## 更换笔记背景
+<a name="笔记界面美化"></a>  
+ ## 笔记界面美化
  1. 修改**AndroidManifest.xml**的**NotesList**:
  ```
  <activity android:name="NotesList" android:label="@string/title_notes_list"
@@ -376,6 +376,10 @@ adapter = new MyCursorAdapter(
         viewIDs
     );
 ```
+8. 至此，笔记界面从黑色变成白色，为接下来的背景改变做准备。
+<a name="笔记更换背景"></a>  
+## 笔记更换背景
+
 <a name="笔记排序"></a>  
 ## 笔记排序
 1.在 **list_options_menu.xml** 中添加排序项
@@ -460,5 +464,3 @@ adapter = new MyCursorAdapter(
                 return true;
 ```
 3.  至此，笔记排序功能完成。
-<a name="导出笔记功能"></a>  
-## 导出笔记功能
