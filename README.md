@@ -639,7 +639,19 @@ public class NoteColor extends Activity {
         NoteEditor.this.startActivity(intent);
     }
 ```
-7. 至此，笔记更换背景颜色功能完成。
+7. 至此，笔记更换背景颜色功能完成
+*更换颜色前：
+
+![image](https://github.com/Lwx159/MyNotePad/blob/master/img/1%E3%80%81editor.png)
+
+* 选择要更换的颜色：
+
+![image](https://github.com/Lwx159/MyNotePad/blob/master/img/6%E3%80%81color1.png)
+
+* 更换颜色后：
+
+![image](https://github.com/Lwx159/MyNotePad/blob/master/img/6%E3%80%81color2.png)
+
 <a name="笔记排序"></a>  
 ## 笔记排序
 1.在 **list_options_menu.xml** 中添加排序项
@@ -724,3 +736,22 @@ public class NoteColor extends Activity {
                 return true;
 ```
 3.  至此，笔记排序功能完成。
+* 排序页面：
+
+![image](https://github.com/Lwx159/MyNotePad/blob/master/img/8%E3%80%81sort.png)
+
+* 按照创造时间排序：
+
+![image](https://github.com/Lwx159/MyNotePad/blob/master/img/9%E3%80%81sortByCreateTime.png)
+
+* 按照修改时间排序：
+
+![image](
+https://github.com/Lwx159/MyNotePad/blob/master/img/10%E3%80%81sortByChangeTime.png)
+
+* 按照颜色排序：
+
+
+![image](
+https://github.com/Lwx159/MyNotePad/blob/master/img/11%E3%80%81sortByColor.png）
+
