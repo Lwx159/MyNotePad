@@ -100,7 +100,8 @@
        }
 ```
 5. 至此，时间戳功能完成,截图展示如下：
-![image](https://github.com/AngelSXD/sxd_first_repository/blob/master/images/20160615165142.png)
+![image](
+https://github.com/Lwx159/MyNotePad/blob/master/img/2%E3%80%81time.png)
 
 <a name="笔记按标题搜索"></a>  
 ## 笔记按标题搜索
