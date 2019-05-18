@@ -255,9 +255,92 @@ public class NoteSearch extends ListActivity  implements SearchView.OnQueryTextL
     </activity>
 ```
 6. 至此，笔记搜索功能完成。
-<a name="笔记排序"></a>  
-## 笔记排序
 <a name="笔记更换背景颜色"></a>  
 ## 笔记更换背景颜色
+<a name="笔记排序"></a>  
+## 笔记排序
+## 笔记排序
+1.在 **list_options_menu.xml** 中添加排序项
+```
+<!--排序 按照创建时间、修改时间、颜色-->
+    <item
+        android:id="@+id/menu_sort"
+        android:title="@string/menu_sort"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        android:showAsAction="always" >
+        <menu>
+            <item
+                android:id="@+id/menu_sort1"
+                android:title="@string/menu_sort1"/>
+            <item
+                android:id="@+id/menu_sort2"
+                android:title="@string/menu_sort2"/>
+            <item
+                android:id="@+id/menu_sort3"
+                android:title="@string/menu_sort3"/>
+        </menu>
+    </item>
+```
+2. 在**NotesList** 的switch下添加三种排序方法的case：
+```
+            //创建时间排序
+            case R.id.menu_sort1:
+                cursor = managedQuery(
+                        getIntent().getData(),            // Use the default content URI for the provider.
+                        PROJECTION,                       // Return the note ID and title for each note. and modifcation date
+                        null,                             // No where clause, return all records.
+                        null,                             // No where clause, therefore no where column values.
+                        NotePad.Notes._ID  // Use the default sort order.
+                );
+                adapter = new MyCursorAdapter(
+                        this,
+                        R.layout.noteslist_item,
+                        cursor,
+                        dataColumns,
+                        viewIDs
+                );
+                setListAdapter(adapter);
+                return true;
+
+            //修改时间排序
+            case R.id.menu_sort2:
+                cursor = managedQuery(
+                        getIntent().getData(),            // Use the default content URI for the provider.
+                        PROJECTION,                       // Return the note ID and title for each note. and modifcation date
+                        null,                             // No where clause, return all records.
+                        null,                             // No where clause, therefore no where column values.
+                        NotePad.Notes.DEFAULT_SORT_ORDER // Use the default sort order.
+                );
+
+                adapter = new MyCursorAdapter(
+                        this,
+                        R.layout.noteslist_item,
+                        cursor,
+                        dataColumns,
+                        viewIDs
+                );
+                setListAdapter(adapter);
+                return true;
+
+            //颜色排序
+            case R.id.menu_sort3:
+                cursor = managedQuery(
+                        getIntent().getData(),            // Use the default content URI for the provider.
+                        PROJECTION,                       // Return the note ID and title for each note. and modifcation date
+                        null,                             // No where clause, return all records.
+                        null,                             // No where clause, therefore no where column values.
+                        NotePad.Notes.COLUMN_NAME_BACK_COLOR // Use the default sort order.
+                );
+                adapter = new MyCursorAdapter(
+                        this,
+                        R.layout.noteslist_item,
+                        cursor,
+                        dataColumns,
+                        viewIDs
+                );
+                setListAdapter(adapter);
+                return true;
+```
+3.  至此，笔记排序功能完成。
 <a name="导出笔记功能"></a>  
 ## 导出笔记功能
