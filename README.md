@@ -69,6 +69,7 @@
             // 修改时间
             NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE, // 2
     };
+```
 4.  把时间戳改为以时间格式存入:
      改动地方有两处：
 * 第一处为**NotePadProvider.java** ，创建时间
@@ -100,7 +101,6 @@
        }
 ```
 5. 至此，时间戳功能完成。
-
 
 <a name="笔记按标题搜索"></a>  
 ## 笔记按标题搜索
