@@ -51,6 +51,24 @@
 2. 在**NotePadProvider.java**中定义了数据库，其中**CREATE_DATE**是创建笔记的时间，**MODIFICATION_DATE**是修改笔记的时间，这就是我们之后要用到的时间数据。
 ```
  @Override
+        public void onCreate(SQLiteDatabase db) {
+           db.execSQL("CREATE TABLE " + NotePad.Notes.TABLE_NAME + " ("
+                   + NotePad.Notes._ID + " INTEGER PRIMARY KEY,"
+                   + NotePad.Notes.COLUMN_NAME_TITLE + " TEXT,"
+                   + NotePad.Notes.COLUMN_NAME_NOTE + " TEXT,"
+                   + NotePad.Notes.COLUMN_NAME_CREATE_DATE + " INTEGER,"
+                   + NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE + " INTEGER,"
+                   + ");");
+       }
+ ```
+ 3. 在**NoteList.java**中添加一行修改时间**NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE**
+ ```
+ private static final String[] PROJECTION = new String[] {
+            NotePad.Notes._ID, // 0
+            NotePad.Notes.COLUMN_NAME_TITLE, // 1
+            // 修改时间
+            NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE, // 2
+    };
 <a name="笔记按标题搜索"></a>  
 ## 笔记按标题搜索
 <a name="笔记排序"></a>  
