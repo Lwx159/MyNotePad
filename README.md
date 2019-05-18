@@ -255,7 +255,127 @@ public class NoteSearch extends ListActivity  implements SearchView.OnQueryTextL
 ```
 6. 至此，笔记搜索功能完成。
 <a name="笔记更换背景"></a>  
-## 笔记更换背景
+ ## 更换笔记背景
+ 1. 修改**AndroidManifest.xml**的**NotesList**:
+ ```
+ <activity android:name="NotesList" android:label="@string/title_notes_list"
+            android:theme="@android:style/Theme.Holo.Light">
+```
+4. 在**NotePad**中添加：
+```
+public static final String COLUMN_NAME_BACK_COLOR = "color";
+        public static final int DEFAULT_COLOR = 0; //颜色对应的数值
+        public static final int YELLOW_COLOR = 1;
+        public static final int BLUE_COLOR = 2;
+        public static final int GREEN_COLOR = 3;
+        public static final int RED_COLOR = 4;
+        public static final int PURPLE_COLOR=5;
+```
+5. 在**NotePadProvider**中：
+* 数据库定义里添加一行颜色字段 **NotePad.Notes.COLUMN_NAME_BACK_COLOR**：
+```
+@Override
+       public void onCreate(SQLiteDatabase db) {
+           db.execSQL("CREATE TABLE " + NotePad.Notes.TABLE_NAME + " ("
+                   + NotePad.Notes._ID + " INTEGER PRIMARY KEY,"
+                   + NotePad.Notes.COLUMN_NAME_TITLE + " TEXT,"
+                   + NotePad.Notes.COLUMN_NAME_NOTE + " TEXT,"
+                   + NotePad.Notes.COLUMN_NAME_CREATE_DATE + " INTEGER,"
+                   + NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE + " INTEGER,"
+                   + NotePad.Notes.COLUMN_NAME_BACK_COLOR + " INTEGER"
+                   + ");");
+       }
+```
+* 在static{}中添加：
+```
+sNotesProjectionMap.put(
+        NotePad.Notes.COLUMN_NAME_BACK_COLOR,
+        NotePad.Notes.COLUMN_NAME_BACK_COLOR);
+```
+* 在insert中添加：
+```
+ // 新建笔记，背景默认为白色
+if (values.containsKey(NotePad.Notes.COLUMN_NAME_BACK_COLOR) == false) {
+        values.put(NotePad.Notes.COLUMN_NAME_BACK_COLOR, NotePad.Notes.DEFAULT_COLOR);
+        }
+```
+6. 新建**MyCursorAdapter.java**:
+```
+package com.example.android.notepad;
+
+import android.content.Context;
+import android.database.Cursor;
+import android.graphics.Color;
+import android.view.View;
+import android.widget.SimpleCursorAdapter;
+
+/**
+ * Created by Administrator on 2017/5/18.
+ */
+
+public class MyCursorAdapter extends SimpleCursorAdapter {
+
+
+    public MyCursorAdapter(Context context, int layout, Cursor c,
+                           String[] from, int[] to) {
+        super(context, layout, c, from, to);
+    }
+
+
+    @Override
+    public void bindView(View view, Context context, Cursor cursor){
+        super.bindView(view, context, cursor);
+        //从数据库中读取的cursor中获取笔记列表对应的颜色数据，并设置笔记颜色
+        int x = cursor.getInt(cursor.getColumnIndex(NotePad.Notes.COLUMN_NAME_BACK_COLOR));
+        
+        switch (x){
+            case NotePad.Notes.DEFAULT_COLOR:
+                view.setBackgroundColor(Color.rgb(255, 255, 255));
+                break;
+            case NotePad.Notes.YELLOW_COLOR:
+                view.setBackgroundColor(Color.rgb(255, 255, 153));
+                break;
+            case NotePad.Notes.BLUE_COLOR:
+                view.setBackgroundColor(Color.rgb(204, 204, 255));
+                break;
+            case NotePad.Notes.GREEN_COLOR:
+                view.setBackgroundColor(Color.rgb(204, 255, 153));
+                break;
+            case NotePad.Notes.RED_COLOR:
+                view.setBackgroundColor(Color.rgb(255, 204, 204));
+                break;
+            case NotePad.Notes.PURPLE_COLOR:
+                view.setBackgroundColor(Color.rgb(226,178,242));
+                break;
+            default:
+                view.setBackgroundColor(Color.rgb(255, 255, 255));
+                break;
+        }
+    }
+}
+```
+7. 修改**NotesList**：
+*
+ ```
+private static final String[] PROJECTION = new String[] {
+            NotePad.Notes._ID, // 0
+            NotePad.Notes.COLUMN_NAME_TITLE, // 1
+            //扩展 显示时间 颜色
+            NotePad.Notes.COLUMN_NAME_MODIFICATION_DATE, // 2
+            NotePad.Notes.COLUMN_NAME_BACK_COLOR,
+    };
+```
+*
+```
+ //修改为可以填充颜色的自定义的adapter，自定义的代码在MyCursorAdapter.java中
+adapter = new MyCursorAdapter(
+        this,
+        R.layout.noteslist_item,
+        cursor,
+        dataColumns,
+        viewIDs
+    );
+```
 <a name="笔记排序"></a>  
 ## 笔记排序
 1.在 **list_options_menu.xml** 中添加排序项
